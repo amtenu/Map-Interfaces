@@ -1,11 +1,22 @@
 package dev.aman;
 
+  //Define enums
+
+enum color{BLACK,BLUE,RED,GREEN, YELLOW}
+
+enum Line_Marker{DASHED, DOTTED, SOLID}
+
+enum Point_Marker{CIRCLE,PUSH_PIN,STAR,SQUARE,TRIANGLE}
+
+enum Geometry {POINT,LINE,POLYGON}
+
+
 
 public interface Mappable {
     String JSON_PROPERTY="""
               "properties":{%s}""";
     String getLabel();
-    Geomery getShape();
+    Geometry getShape();
     String getMarker();
 
     default String toJson(){
