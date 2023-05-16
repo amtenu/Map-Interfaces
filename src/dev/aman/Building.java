@@ -38,4 +38,10 @@ public class Building implements Mappable {
             default -> color.BLACK+ " "+ Point_Marker.CIRCLE;
         };
     }
+
+    @Override
+    public String toJson() {
+        return Mappable.super.toJson() + """
+              ,"name:"%s","usage":"%s"  """.formatted(name,usage);
+    }
 }
